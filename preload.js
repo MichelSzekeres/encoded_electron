@@ -1,5 +1,5 @@
 const {contextBridge,ipcRenderer} = require("electron");
-console.log('Hello from other side')
+
 /*ensure that the ipcRenderer is connected on safe way and only supports specific actions*/
 contextBridge.exposeInMainWorld(
     "api", {
@@ -23,7 +23,3 @@ contextBridge.exposeInMainWorld(
 process.once('document-start', () => {
 
 })
-
-document.addEventListener("load",()=>{
-    console.log('Hello from other side')
-});
